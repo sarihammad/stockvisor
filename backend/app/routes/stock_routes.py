@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.schemas import StockHistoryRequest, StockPredictionRequest
-from app.services import fetch_stock_history, predict_stock_price
+from schemas import StockHistoryRequest, StockPredictionRequest
+from services import fetch_stock_history, predict_stock_price
 
 router = APIRouter(
     prefix="/api/stocks",
