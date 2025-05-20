@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: stockvisor-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+    networks:
+      - stockvisor-network
+
+networks:
+  stockvisor-network:
+    driver: bridge
