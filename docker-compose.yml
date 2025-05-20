@@ -10,6 +10,20 @@ services:
     networks:
       - stockvisor-network
 
+  frontend:
+    build:
+      context: ./frontend
+    container_name: stockvisor-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - stockvisor-network
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
 networks:
   stockvisor-network:
     driver: bridge
